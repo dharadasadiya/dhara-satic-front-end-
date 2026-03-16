@@ -1,11 +1,13 @@
-function toggleMenu(){
+const menuBtn = document.querySelector(".menu-btn")
+const navMenu = document.querySelector(".nav-menu")
 
-let menu = document.getElementById("mobileMenu");
+menuBtn.addEventListener("click", () => {
 
-if(menu.style.display === "flex"){
-menu.style.display="none";
-}else{
-menu.style.display="flex";
-}
+navMenu.classList.toggle("nav-active")
 
-}
+const expanded =
+menuBtn.getAttribute("aria-expanded") === "true"
+
+menuBtn.setAttribute("aria-expanded", !expanded)
+
+})
